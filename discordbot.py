@@ -20,8 +20,8 @@ async def ping(ctx):
 @bot.command()
 async def chum(ctx):
     with open(chum.txt) as d:
-        l = [s.strip() for s in d.readlines()]
-    await ctx.send(random.choice(l))
+        l_dic = [s.strip() for s in d.readlines()]
+    await ctx.send(random.choice(l_dic))
 
 
 bot.run(token)
