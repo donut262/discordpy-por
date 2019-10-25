@@ -11,7 +11,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
 async def on_message(ctx):
-    msg_list = ['こんばんは', 'こんにちは', 'おはよー', 'ばんちゃー']
+    msg_list = ['こんばんは', 'こんにちは', 'おはよー', 'ばんちゃー', 'こんにちはー', 'こんばんはー', 'ばんわー', 'おはようございます']
     if ctx.author.bot:
         return
     if ctx.content == '!chum':
