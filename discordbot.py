@@ -1,9 +1,10 @@
+import discord
 from discord.ext import commands
 import os
 import random
 import traceback
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='d!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
@@ -20,6 +21,20 @@ async def ping(ctx):
 @bot.command()
 async def chum(ctx):
     with open('chum.txt') as d:
+        l_dic = [s.strip() for s in d.readlines()]
+    await ctx.send(random.choice(l_dic))
+
+
+@bot.command()
+async def sou(ctx):
+    with open('sou.txt') as d:
+        l_dic = [s.strip() for s in d.readlines()]
+    await ctx.send(random.choice(l_dic))
+
+
+@bot.command()
+async def ken(ctx):
+    with open('ken.txt') as d:
         l_dic = [s.strip() for s in d.readlines()]
     await ctx.send(random.choice(l_dic))
 
