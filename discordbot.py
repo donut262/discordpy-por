@@ -39,4 +39,14 @@ async def ken(ctx):
     await ctx.send(random.choice(l_dic))
 
 
+@bot.event()
+async def on_message(ctx):
+    msg_list = ['こんばんは', 'こんにちは', 'おはよー']
+    if ctx.author.bot:
+        return
+    if ctx.content in msg_list:
+        await ctx.send('へいよーぐっつすっす')
+
+
+
 bot.run(token)
