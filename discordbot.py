@@ -26,8 +26,8 @@ async def on_message(ctx):
         with open('ken.txt') as d:
             l_dic = [s.strip() for s in d.readlines()]
         await ctx.send(random.choice(l_dic))
-    if ctx.content in msg_list:
-        await ctx.send('へいよーぐっつすっす')
+    # if ctx.content in msg_list:
+    #     await ctx.send('へいよーぐっつすっす')
 
 
 client.run(token)
