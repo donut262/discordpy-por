@@ -1,5 +1,6 @@
 from discord.ext import commands
 import os
+import random
 import traceback
 
 bot = commands.Bot(command_prefix='!')
@@ -18,7 +19,9 @@ async def ping(ctx):
 
 @bot.command()
 async def chum(ctx):
-    await ctx.send('にゅたこのおぱんつ見たいな・・・')
+    with open(chum.txt) as d:
+        l = [s.strip() for s in d.readlines()]
+    await ctx.send(random.choice(l))
 
 
 bot.run(token)
