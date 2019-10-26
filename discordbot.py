@@ -43,7 +43,7 @@ async def on_message(ctx):
 
     for row in greeting_list:
         if str(ctx.content).startswith(row):
-            await ctx.channel.send(f"へいよーぐっつすっす\n{ctx.author.mention }いらっしゃ～い")
+            await ctx.channel.send(f"へいよーぐっつすっす\n{ctx.author.mention }さん、いらっしゃ～い")
 
 
 client.run(token)
