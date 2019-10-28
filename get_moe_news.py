@@ -6,7 +6,6 @@ from xml.sax.saxutils import unescape
 official_url = 'https://moepic.com'
 
 def get_moe_news(get_all=True):
-
     except_list = []
     if get_all is False:
         with open('except_news_titles.txt', mode='rb') as f:
