@@ -28,9 +28,11 @@ async def on_message(ctx):
     if str(ctx.content).startswith('!moenews'):
         cmd_str = str(ctx.content).split(" ")
 
-        if str(cmd_str[1:2]) == 'all':
+        if str(cmd_str[1:2]).strip() == 'all':
+            await ctx.channel.send('トップに表示されているニュースを全件表示します。')
             news = get_moe_news.get_moe_news(get_all=True)
         else:
+            await ctx.channel.send('固定ニュース以外を表示します。')
             news = get_moe_news.get_moe_news(get_all=False)
 
         news_text = ""
