@@ -9,8 +9,8 @@ import traceback
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 
-with open('greeting.txt') as f:
-    greeting_list = [s.strip() for s in f.readlines()]
+# with open('greeting.txt') as f:
+#     greeting_list = [s.strip() for s in f.readlines()]
 
 
 @client.event
@@ -60,10 +60,10 @@ async def on_message(ctx):
             l_dic = [s.strip() for s in d.readlines()]
         await ctx.channel.send(random.choice(l_dic))
 
-    for row in greeting_list:
-        if str(ctx.content).startswith(row):
-            await ctx.channel.send(f"へいよーぐっつすっす\n{ctx.author.mention}さん、いらっしゃ～い")
-            break
+    # for row in greeting_list:
+    #     if str(ctx.content).startswith(row):
+    #         await ctx.channel.send(f"へいよーぐっつすっす\n{ctx.author.mention}さん、いらっしゃ～い")
+    #         break
 
 
 client.run(token)
