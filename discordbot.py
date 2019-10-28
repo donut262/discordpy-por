@@ -29,7 +29,8 @@ async def on_message(ctx):
         cmd_str = str(ctx.content).split(" ")
 
         await ctx.channel.send(str(cmd_str[1:2]).strip())
-        if str(cmd_str[1:2]).strip() == 'all':
+        await ctx.channel.send(type(str(cmd_str[1:2]).strip()))
+        if str(cmd_str[1:2]).strip() == "['all']":
             await ctx.channel.send('トップに表示されているニュースを全件表示します。')
             news = get_moe_news.get_moe_news(get_all=True)
         else:
