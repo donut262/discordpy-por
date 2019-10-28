@@ -28,7 +28,7 @@ async def on_message(ctx):
     if str(ctx.content).startswith('!moenews'):
         cmd_str = str(ctx.content).split(" ")
 
-        if cmd_str[1:2] == ['all']:
+        if str(cmd_str[1:2]) == 'all':
             news = get_moe_news.get_moe_news(get_all=True)
         else:
             news = get_moe_news.get_moe_news(get_all=False)
