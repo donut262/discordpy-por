@@ -27,23 +27,23 @@ async def on_message(ctx):
     if ctx.author.bot:
         return
 
-    if ctx.content == '!moe_news all':
-        news = get_moe_news.get_moe_news(get_all=True)
-        news_text = "'''\n"
-        for d in news:
-            news_text = news_text + d.get('title') + "\n"
-            news_text = news_text + d.get('url') + "\n"
-        news_text = news_text + "'''"
-        await ctx.channel.send(news_text)
-
-    if ctx.content == '!moe_news':
-        news = get_moe_news.get_moe_news(get_all=False)
-        news_text = "'''\n"
-        for d in news:
-            news_text = news_text + d.get('title') + "\n"
-            news_text = news_text + d.get('url') + "\n"
-        news_text = news_text + "'''"
-        await ctx.channel.send(news_text)
+    # if ctx.content == '!moe_news all':
+    #     news = get_moe_news.get_moe_news(get_all=True)
+    #     news_text = "'''\n"
+    #     for d in news:
+    #         news_text = news_text + d.get('title') + "\n"
+    #         news_text = news_text + d.get('url') + "\n"
+    #     news_text = news_text + "'''"
+    #     await ctx.channel.send(news_text)
+    #
+    # if ctx.content == '!moe_news':
+    #     news = get_moe_news.get_moe_news(get_all=False)
+    #     news_text = "'''\n"
+    #     for d in news:
+    #         news_text = news_text + d.get('title') + "\n"
+    #         news_text = news_text + d.get('url') + "\n"
+    #     news_text = news_text + "'''"
+    #     await ctx.channel.send(news_text)
 
     if ctx.content == '!chum':
         with open('chum.txt') as d:
