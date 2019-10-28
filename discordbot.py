@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 import random
 import traceback
-import get_moe_news
+# import get_moe_news
 
 # bot = commands.Bot(command_prefix='d!')
 client = discord.Client()
