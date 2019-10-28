@@ -1,9 +1,6 @@
 import discord
-from discord.ext import commands
 import os
 import random
-import traceback
-import re
 import get_moe_news
 
 client = discord.Client()
@@ -28,22 +25,18 @@ async def on_message(ctx):
     if ctx.author.bot:
         return
 
-    if ctx.content == '!moe_news all':
-        news = get_moe_news.get_moe_news(get_all=True)
-        news_text = "```\n"
-        for d in news:
-            news_text = news_text + d.get('title') + "\n"
-            news_text = news_text + d.get('url') + "\n"
-        news_text = news_text + "```"
-        await ctx.channel.send(news_text)
+    if str(ctx.content).startswith('!moenews'):
+        cmd_str = str(ctx.content).split(" ")
 
-    if ctx.content == '!moe_news':
-        news = get_moe_news.get_moe_news(get_all=False)
-        news_text = "```\n"
+        if cmd_str[1:2] == 'all':
+            news = get_moe_news.get_moe_news(get_all=True)
+        else:
+            news = get_moe_news.get_moe_news(get_all=False)
+
+        news_text = ""
         for d in news:
             news_text = news_text + d.get('title') + "\n"
             news_text = news_text + d.get('url') + "\n"
-        news_text = news_text + "```"
         await ctx.channel.send(news_text)
 
     if ctx.content == '!chum':
