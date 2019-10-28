@@ -33,6 +33,7 @@ async def on_message(ctx):
         else:
             news = get_moe_news.get_moe_news(get_all=False)
 
+        await ctx.channel.send(news)
         news_text = ""
         for d in news:
             news_text = news_text + d.get('title') + "\n"
