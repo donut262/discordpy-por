@@ -28,6 +28,7 @@ async def on_message(ctx):
     if str(ctx.content).startswith('!moenews'):
         cmd_str = str(ctx.content).split(" ")
 
+        await ctx.channel.send(cmd_str[1:2])
         if cmd_str[1:2] == 'all':
             news = get_moe_news.get_moe_news(get_all=True)
         else:
