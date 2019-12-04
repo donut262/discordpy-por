@@ -47,10 +47,8 @@ async def on_message(ctx):
     if str(ctx.content).startswith('/dice'):
         cmd = ['/dice', '0', '1000']
 
-        if ' ' in str(ctx.content):
+        if ' ' in str(ctx.content).strip():
             cmd = str(ctx.content).split(' ')
-
-        await ctx.channel.send(cmd)
 
         rand_min = 0
         rand_max = 1000
