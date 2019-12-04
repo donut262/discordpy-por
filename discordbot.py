@@ -60,7 +60,7 @@ async def on_message(ctx):
             rand_max = int(cmd[2])
 
         dice = random.randint(rand_min, rand_max)
-        await ctx.channel.send(ctx.author.mention + 'はマジックダイス' + '(' + str(rand_min) + '-' + str(rand_max) + ')' + 'を振った！ ' + str(dice))
+        await ctx.channel.send(ctx.author.mention + ' はマジックダイス' + '(' + str(rand_min) + '-' + str(rand_max) + ')' + 'を振った！ ' +str(dice) + ' が出た！')
 
     if ctx.content == '!chum':
         with open('chum.txt') as d:
