@@ -46,16 +46,14 @@ async def on_message(ctx):
 
     if str(ctx.content).startswith('/dice'):
         cmd = str(ctx.content).split(' ')
+        rand_min = 0
+        rand_max = 1000
 
         if cmd[0:1]:
             rand_min = int(cmd[1])
-        else:
-            rand_min = 0
 
         if cmd[1:2]:
             rand_max = int(cmd[2])
-        else:
-            rand_max = 1000
 
         dice = random.randint(rand_min, rand_max)
         await ctx.channel.send(cmd)
