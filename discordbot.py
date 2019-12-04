@@ -41,6 +41,9 @@ async def on_message(ctx):
             news_text = news_text + d.get('url') + "\n"
         await ctx.channel.send(news_text)
 
+    if ctx.content == '!dice_test':
+        await ctx.channel.send(f"{ctx.author.mention}はマジックダイスを振った！")
+
     if str(ctx.content).startswith('!dice'):
         cmd = str(ctx.content).split(' ')
 
@@ -56,9 +59,6 @@ async def on_message(ctx):
 
         dice = random.randint(rand_min, rand_max)
         await ctx.channel.send(ctx.author.mention + 'はマジックダイス' + '(' + str(rand_min) + '-' + str(rand_max) +')' + 'を振った！ ' + str(dice))
-
-    if ctx.content == '!dice_test':
-        await ctx.channel.send(f"{ctx.author.mention}はマジックダイスを振った！")
 
     if ctx.content == '!chum':
         with open('chum.txt') as d:
