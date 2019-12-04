@@ -41,6 +41,19 @@ async def on_message(ctx):
             news_text = news_text + d.get('url') + "\n"
         await ctx.channel.send(news_text)
 
+    if ctx.content.startswith('!dice'):
+        cmd = ctx.content.split(' ')
+        if ctx[0:1]:
+            rand_min = cmd[1]
+        else:
+            rand_min = 0
+        if ctx[1:2]:
+            rand_max = cmd[2]
+        else:
+            rand_max = 1000
+        dice = random.randint(rand_min, rand_max)
+        await ctx.channel.send(dice)
+
     if ctx.content == '!chum':
         with open('chum.txt') as d:
             l_dic = [s.strip() for s in d.readlines()]
