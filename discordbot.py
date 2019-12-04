@@ -48,12 +48,12 @@ async def on_message(ctx):
         cmd = str(ctx.content).split(' ')
 
         if cmd[0:1]:
-            rand_min = cmd[1]
+            rand_min = int(cmd[1])
         else:
             rand_min = 0
 
         if cmd[1:2]:
-            rand_max = cmd[2]
+            rand_max = int(cmd[2])
         else:
             rand_max = 1000
 
