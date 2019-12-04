@@ -44,7 +44,7 @@ async def on_message(ctx):
     if ctx.content == '!dice_test':
         await ctx.channel.send(f"{ctx.author.mention}はマジックダイスを振った！")
 
-    if str(ctx.content).startswith('!dice'):
+    if str(ctx.content).startswith('/dice'):
         cmd = str(ctx.content).split(' ')
 
         if cmd[0:1]:
@@ -58,6 +58,7 @@ async def on_message(ctx):
             rand_max = 1000
 
         dice = random.randint(rand_min, rand_max)
+        await ctx.channel.send(cmd)
         await ctx.channel.send(ctx.author.mention + 'はマジックダイス' + '(' + str(rand_min) + '-' + str(rand_max) +')' + 'を振った！ ' + str(dice))
 
     if ctx.content == '!chum':
