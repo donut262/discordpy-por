@@ -41,8 +41,8 @@ async def on_message(ctx):
             news_text = news_text + d.get('url') + "\n"
         await ctx.channel.send(news_text)
 
-    if ctx.content.startswith('!dice'):
-        cmd = ctx.content.split(' ')
+    if str(ctx.content).startswith('!dice'):
+        cmd = str(ctx.content).split(' ')
 
         if ctx[0:1]:
             rand_min = cmd[1]
